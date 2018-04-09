@@ -1,0 +1,197 @@
+`include "global.vh"
+
+`include "utils.sv"
+`include "tasks.sv"
+
+`timescale 1ns/100ps
+
+module tb();
+    integer i, ifh, ofh, dfh;
+
+    // Frame buffer
+    reg [`CHANNEL_SIZE - 1:0] mem[0:`MEM_SIZE];
+	integer elements = 256;
+	
+	// VSYNV
+	logic vsync_in;
+	logic vsync_out;
+	
+	// CORNER WRITE ENABLE
+	logic corner_we;
+	
+	// CORNER COORDINATES (x,y)
+	logic [9:0] y_coor, x_coor;
+	
+    // Bitmap metadata
+    integer unsigned width;
+	integer count;
+    integer unsigned height;
+    integer unsigned size_of_data;
+    integer unsigned offset_to_data;
+    integer unsigned padding;
+    integer unsigned bytes_per_pixel;
+	logic unsigned [63:0] temp;
+	
+	function int start_corner;
+		input int x_c,y_c;	
+		start_corner = (y_c-3)*width + x_c - 3;
+    endfunction
+	
+	// Dynamic allocated points
+	logic [9:0] x_mem[];
+	logic [9:0] y_mem[];
+	integer iter;	
+	
+    // Inputs to DUT
+    reg clk;
+    reg en;
+    reg [`PIXEL_SIZE - 1:0] data;
+	reg reset_n;
+	
+	fast_top dut0 (
+		.i_clk(clk),
+		.i_din(data), 
+		.i_vsync(vsync_in), 
+		.o_corner_we(corner_we), 
+		.o_x(x_coor), 
+		.o_y(y_coor), 
+		.o_vsync(vsync_out));
+	
+
+    // -----------------------
+    // Initialization sequence
+    // -----------------------
+    initial begin
+        // Initialize inputs
+        clk = 0;
+        reset_n = 0;
+        en = 0;
+		count = 0;
+		vsync_in = 0;
+		iter <= 0;
+		x_mem = new[elements];
+		y_mem = new[elements];
+
+        // Take out of reset
+        #20
+        reset_n = 1;
+        data = mem[0];
+
+        // Open files
+        ifh = open_file(`IFILE, "rb");
+        ofh = open_file(`OFILE, "wb");
+
+        // Read bitmap
+        read_bmp_head(
+            .ifh(ifh),
+            .width(width),
+            .height(height),
+            .size_of_data(size_of_data),
+            .offset_to_data(offset_to_data),
+            .padding(padding),
+            .bytes_per_pixel(bytes_per_pixel)
+        );
+
+        read_bmp_data(
+            .ifh(ifh),
+            .bytes_per_row(width * bytes_per_pixel),
+            .rows(height),
+            .padding(padding),
+            .mem(mem)
+        );
+		
+		// START
+		#20
+		en = 1;
+    end
+
+    // --------------------
+    // Termination sequence
+    // --------------------
+    initial begin
+        #`SIM_TIME
+
+        // Write bitmap
+        write_bmp_head(ifh, ofh);
+
+        write_bmp_data(
+            .ofh(ofh),
+            .bytes_per_row(width * bytes_per_pixel),
+            .rows(height),
+            .padding(padding),
+            .mem(mem)
+        );
+
+        // Close files
+        $fclose(ifh);
+        $fclose(ofh);
+
+        // Exit
+        $finish;
+    end
+
+    // ----------------
+    // Clock generation
+    // ----------------
+    always
+        #10 clk  = ~clk ;
+
+    //-----------
+    // Test logic
+    //-----------
+	always @ (posedge clk) begin
+		// something to do with mem --> data
+		data = mem[count];
+		vsync_in <= 1'b0;
+		if(en) begin
+		    count <= count + 1;
+			if(count == 0) begin
+				// Initialization
+				vsync_in <= 1'b1;
+			end
+			if(corner_we) begin
+				x_mem[iter] = x_coor;
+				y_mem[iter] = y_coor;
+				iter <= iter + 1;
+			end
+			if(vsync_out) begin
+				if(count <= iter)
+				begin
+					temp = start_corner(x_mem[count],y_mem[count]);
+					$display("x: %d , y: %d, temp: %d \n", x_mem[count], y_mem[count], temp);
+					mem[temp] = 8'd246;				// bottom horizontal line
+					mem[temp+1] = 8'd246;
+					mem[temp+2] = 8'd246;
+					mem[temp+3] = 8'd246;
+					mem[temp+4] = 8'd246;
+					mem[temp+5] = 8'd246;
+					mem[temp+6] = 8'd246;
+					
+					mem[temp + width] = 8'd246;		// left vertical line
+					mem[temp + 2*width] = 8'd246;
+					mem[temp + 3*width] = 8'd246;
+					mem[temp + 4*width] = 8'd246;
+					mem[temp + 5*width] = 8'd246;
+					mem[temp + 6*width] = 8'd246;
+					
+					//mem[temp + 6] = 8'd246;
+					mem[temp + width + 6] = 8'd246;		// right vertical line
+					mem[temp + 2*width + 6] = 8'd246;
+					mem[temp + 3*width + 6] = 8'd246;
+					mem[temp + 4*width + 6] = 8'd246;
+					mem[temp + 5*width + 6] = 8'd246;
+					mem[temp + 6*width + 6] = 8'd246;
+					
+					
+					mem[temp + 6*width + 1] = 8'd246;	// top horizontal line
+					mem[temp + 6*width + 2] = 8'd246;
+					mem[temp + 6*width + 3] = 8'd246;
+					mem[temp + 6*width + 4] = 8'd246;
+					mem[temp + 6*width + 5] = 8'd246;
+					//mem[temp + 6*width + 6] = 8'd246;
+				end else count <= 0;
+			end
+		end
+	end
+
+endmodule
