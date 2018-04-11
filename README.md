@@ -1,30 +1,24 @@
-Sample Bitmap Testbench
-=======================
+Project name: environmentally aware camera peripheral
 
-About
------
-This testbench was written for an image processing module that accepts one pixel
-per clock cycle.  To do so, a bitmap is read into memory.  Input pixel are then
-streamed to the DUT while output pixels are written to memory simultaneously.
-Finally, when the simulation is over, the output is written to a new bitmap file.
+Authors: Nicholas Cusimano, Jeff Feng, Gallop Fan
 
-A sample DUT and sample input image are supplied.
+Description: corner detector based off of the FAST algorithm, also has servo driver code (the project was intended to run on a moving robot)
 
-Requirements
-------------
-This project requires Modelsim.  Please ensure that Modelsim executables are on
-your path.
+How to use the FAST test bench: we have a run_sim.do script that can be used in ModelSim. Ensure all the src files are compiled and the script points to the correct source directory. 
 
-Quick Start
------------
-Run without gui
+Structure: The repository contains three directories: 
 
-    vsim -c -do run_sim.do
+  -Imgs:contains input images for the FAST algorithm
 
-Run with gui
+  -Out: contains output images for the FAST algorithm
 
-    vsim -do run_sim.do
+  -Src: contains source code for the FAST algorithm (shown in the figure below under the fast block), as well as a top level module, test bench file, and counters to perform pixel addressing.
 
-Caveats
--------
-This testbench accepts only 24-bit per pixel bitmaps.
+Acknowledgements: 
+
+  -The bitmap test bench through ModelSim was based off of contributions from a prior ECE532 project test bench (https://github.com/ngemily/sample-bmp-tb).
+  
+  -The FAST algorithm was based off of the following papers
+      -https://pdfs.semanticscholar.org/1cb7/eb6486863529f32ad7c6e41c1489c7ad7a18.pdf
+      -https://pdfs.semanticscholar.org/8d21/0d0e6fbdc8ceba138d9b0769f60f26ec2df2.pdf 
+
