@@ -1,20 +1,20 @@
-Project name: environmentally aware camera peripheral
+*Project name*: environmentally aware camera peripheral
 
-Authors: Nicholas Cusimano, Jeff Feng, Gallop Fan
+*Authors*: Nicholas Cusimano, Jeff Feng, Gallop Fan
 
-Description: corner detector based off of the FAST algorithm, also has servo driver code (the project was intended to run on a moving robot)
+*Description*: corner detector based off of the FAST algorithm, also has servo driver code (the project was intended to run on a moving robot)
 
-How to use the FAST test bench: we have a run_sim.do script that can be used in ModelSim. Ensure all the src files are compiled and the script points to the correct source directory. 
+*How to use the FAST test bench*: we have a run_sim.do script that can be used in ModelSim. Ensure all the src files are compiled and the script points to the correct source directory. The servo files are also in the src directory, and they are not needed for the run_sim.do script, so it is recommended that they be moved to another directory. The same can be said of the video_ip files
 
-Structure: The repository contains three directories: 
+*Structure*: The repository contains three directories: 
 
-  -Imgs:contains input images for the FAST algorithm
+  -*Imgs*:contains input images for the FAST algorithm
 
-  -Out: contains output images for the FAST algorithm
+  -*Out*: contains output images for the FAST algorithm
 
-  -Src: contains source code for the FAST algorithm (shown in the figure below under the fast block), as well as a top level module, test bench file, and counters to perform pixel addressing.
+  -*Src*: contains source code for the FAST algorithm (shown in the figure below under the fast block), as well as a top level module, test bench file, and counters to perform pixel addressing. also contains the project for the servo IP. 
 
-Acknowledgements: 
+*Acknowledgements*: 
 
   -The bitmap test bench through ModelSim was based off of contributions from a prior ECE532 project test bench (https://github.com/ngemily/sample-bmp-tb).
   
