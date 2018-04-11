@@ -1,0 +1,276 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Mon Feb  5 00:13:25 2018
+| Host         : Anthony running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_servo_ip_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_servo_ip_0_1 (xilinx.com:user:servo_ip:1.0) from (Rev. 9) to (Rev. 11)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sun Feb  4 23:45:24 2018
+| Host         : Anthony running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_servo_ip_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_servo_ip_0_1 (xilinx.com:user:servo_ip:1.0) from (Rev. 8) to (Rev. 9)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sun Feb  4 23:34:53 2018
+| Host         : Anthony running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_servo_ip_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_servo_ip_0_1 (xilinx.com:user:servo_ip:1.0) from (Rev. 7) to (Rev. 8)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sun Feb  4 23:20:11 2018
+| Host         : Anthony running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_servo_ip_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_servo_ip_0_1 (xilinx.com:user:servo_ip:1.0) from (Rev. 6) to (Rev. 7)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sun Feb  4 22:49:34 2018
+| Host         : Anthony running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_servo_ip_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_servo_ip_0_1 (xilinx.com:user:servo_ip:1.0) from (Rev. 5) to (Rev. 6)
+
+After upgrade, an IP may have parameter differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality.
+
+2. Customization warnings
+-------------------------
+
+The normal upgrade process failed due to validation failures in the given configuration . Attempting partial upgrade.
+This process will attempt to set as many user parameters as possible.Please check the parameters whose values were not applied
+
+Unable to set the value '0x00000001' on parameter 'Scalefactor' due to the following failure - 
+Invalid long/float value '0x00000001' specified for parameter 'Scalefactor(scaleFactor)' for BD Cell 'design_1_servo_ip_0_1'.
+.Restoring to an old valid value of '1'
+
+Parameter 'period' is no longer present on the upgraded IP 'design_1_servo_ip_0_1', and cannot be set to '0x00FFF'
+
+
+3. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:user:servo_ip:1.0 -user_name design_1_servo_ip_0_1
+set_property -dict "\
+  CONFIG.C_S00_AXI_ADDR_WIDTH {4} \
+  CONFIG.C_S00_AXI_BASEADDR {0xFFFFFFFF} \
+  CONFIG.C_S00_AXI_DATA_WIDTH {32} \
+  CONFIG.C_S00_AXI_HIGHADDR {0x00000000} \
+  CONFIG.Component_Name {design_1_servo_ip_0_1} \
+  CONFIG.S00_AXI.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.S00_AXI.WIZ_DATA_WIDTH {32} \
+  CONFIG.S00_AXI.WIZ_NUM_REG {4} \
+  CONFIG.S00_AXI_CLK.ASSOCIATED_BUSIF {S00_AXI} \
+  CONFIG.S00_AXI_CLK.ASSOCIATED_RESET {s00_axi_aresetn} \
+  CONFIG.S00_AXI_RST.POLARITY {ACTIVE_LOW} \
+  CONFIG.refreshPeriod {0x001E8480} \
+  CONFIG.s00_axi_aclk.ASSOCIATED_RESET {s00_axi_aresetn} \
+  CONFIG.s00_axi_aresetn.POLARITY {ACTIVE_LOW} \
+  CONFIG.scaleFactor {0x00000001} \
+  CONFIG.zeroTime {0x49F0} " [get_ips design_1_servo_ip_0_1]
+
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sun Feb  4 22:45:34 2018
+| Host         : Anthony running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_servo_ip_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_servo_ip_0_1 (xilinx.com:user:servo_ip:1.0) from (Rev. 4) to (Rev. 5)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_servo_ip_0_1'. These changes may impact your design.
+
+
+-Upgrade has removed port 'servoPWM'
+
+-Upgrade has added port 'servoPWM1'
+
+-Upgrade has added port 'servoPWM2'
+
+
+3. Customization warnings
+-------------------------
+
+Parameter 'init_offset' is no longer present on the upgraded IP 'design_1_servo_ip_0_1', and cannot be set to '0x00FF'
+
+
+4. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:user:servo_ip:1.0 -user_name design_1_servo_ip_0_1
+set_property -dict "\
+  CONFIG.C_S00_AXI_ADDR_WIDTH {4} \
+  CONFIG.C_S00_AXI_BASEADDR {0xFFFFFFFF} \
+  CONFIG.C_S00_AXI_DATA_WIDTH {32} \
+  CONFIG.C_S00_AXI_HIGHADDR {0x00000000} \
+  CONFIG.Component_Name {design_1_servo_ip_0_1} \
+  CONFIG.S00_AXI.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.S00_AXI.WIZ_DATA_WIDTH {32} \
+  CONFIG.S00_AXI.WIZ_NUM_REG {4} \
+  CONFIG.S00_AXI_CLK.ASSOCIATED_BUSIF {S00_AXI} \
+  CONFIG.S00_AXI_CLK.ASSOCIATED_RESET {s00_axi_aresetn} \
+  CONFIG.S00_AXI_RST.POLARITY {ACTIVE_LOW} \
+  CONFIG.period {0x00FFF} \
+  CONFIG.s00_axi_aclk.ASSOCIATED_RESET {s00_axi_aresetn} \
+  CONFIG.s00_axi_aresetn.POLARITY {ACTIVE_LOW} " [get_ips design_1_servo_ip_0_1]
+
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sun Feb  4 21:27:34 2018
+| Host         : Anthony running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_servo_ip_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_servo_ip_0_1 (xilinx.com:user:servo_ip:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sun Feb  4 20:12:47 2018
+| Host         : Anthony running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_servo_ip_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_servo_ip_0_1 (xilinx.com:user:servo_ip:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sun Feb  4 19:30:47 2018
+| Host         : Anthony running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_servo_ip_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_servo_ip_0_1 (xilinx.com:user:servo_ip:1.0) from (Rev. 1) to (Rev. 2)
+

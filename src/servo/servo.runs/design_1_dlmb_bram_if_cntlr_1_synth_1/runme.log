@@ -1,0 +1,50 @@
+
+*** Running vivado
+    with args -log design_1_dlmb_bram_if_cntlr_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_dlmb_bram_if_cntlr_1.tcl
+
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source design_1_dlmb_bram_if_cntlr_1.tcl -notrace
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 247.961 ; gain = 39.648
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:27 . Memory (MB): peak = 351.672 ; gain = 87.195
+INFO: [Synth 8-638] synthesizing module 'design_1_dlmb_bram_if_cntlr_1' [c:/Users/Anthony/Documents/ECE532/servo/servo.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_1/synth/design_1_dlmb_bram_if_cntlr_1.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'lmb_bram_if_cntlr' [c:/Users/Anthony/Documents/ECE532/servo/servo.srcs/sources_1/bd/design_1/ipshared/51e1/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3106]
+INFO: [Synth 8-638] synthesizing module 'lmb_mux' [c:/Users/Anthony/Documents/ECE532/servo/servo.srcs/sources_1/bd/design_1/ipshared/51e1/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:2601]
+INFO: [Synth 8-638] synthesizing module 'pselect_mask' [c:/Users/Anthony/Documents/ECE532/servo/servo.srcs/sources_1/bd/design_1/ipshared/51e1/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:2121]
+INFO: [Synth 8-256] done synthesizing module 'pselect_mask' (1#1) [c:/Users/Anthony/Documents/ECE532/servo/servo.srcs/sources_1/bd/design_1/ipshared/51e1/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:2121]
+INFO: [Synth 8-256] done synthesizing module 'lmb_mux' (2#1) [c:/Users/Anthony/Documents/ECE532/servo/servo.srcs/sources_1/bd/design_1/ipshared/51e1/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:2601]
+INFO: [Synth 8-256] done synthesizing module 'lmb_bram_if_cntlr' (3#1) [c:/Users/Anthony/Documents/ECE532/servo/servo.srcs/sources_1/bd/design_1/ipshared/51e1/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3106]
+INFO: [Synth 8-256] done synthesizing module 'design_1_dlmb_bram_if_cntlr_1' (4#1) [c:/Users/Anthony/Documents/ECE532/servo/servo.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_1/synth/design_1_dlmb_bram_if_cntlr_1.vhd:84]
+Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:40 . Memory (MB): peak = 402.934 ; gain = 138.457
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:41 . Memory (MB): peak = 402.934 ; gain = 138.457
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 675.473 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:50 ; elapsed = 00:02:03 . Memory (MB): peak = 675.473 ; gain = 410.996
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:50 ; elapsed = 00:02:03 . Memory (MB): peak = 675.473 ; gain = 410.996
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:02:03 . Memory (MB): peak = 675.473 ; gain = 410.996
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:50 ; elapsed = 00:02:03 . Memory (MB): peak = 675.473 ; gain = 410.996
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:02:05 . Memory (MB): peak = 675.473 ; gain = 410.996
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:26 ; elapsed = 00:02:50 . Memory (MB): peak = 719.566 ; gain = 455.090
+Finished Timing Optimization : Time (s): cpu = 00:01:26 ; elapsed = 00:02:50 . Memory (MB): peak = 719.566 ; gain = 455.090
+Finished Technology Mapping : Time (s): cpu = 00:01:26 ; elapsed = 00:02:50 . Memory (MB): peak = 738.715 ; gain = 474.238
+Finished IO Insertion : Time (s): cpu = 00:01:28 ; elapsed = 00:02:53 . Memory (MB): peak = 738.715 ; gain = 474.238
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:28 ; elapsed = 00:02:53 . Memory (MB): peak = 738.715 ; gain = 474.238
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:28 ; elapsed = 00:02:53 . Memory (MB): peak = 738.715 ; gain = 474.238
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:28 ; elapsed = 00:02:53 . Memory (MB): peak = 738.715 ; gain = 474.238
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:28 ; elapsed = 00:02:53 . Memory (MB): peak = 738.715 ; gain = 474.238
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:28 ; elapsed = 00:02:53 . Memory (MB): peak = 738.715 ; gain = 474.238
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT2 |     3|
+|2     |LUT3 |     4|
+|3     |FDRE |     2|
++------+-----+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:28 ; elapsed = 00:02:53 . Memory (MB): peak = 738.715 ; gain = 474.238
+synth_design: Time (s): cpu = 00:01:34 ; elapsed = 00:03:06 . Memory (MB): peak = 740.637 ; gain = 477.715

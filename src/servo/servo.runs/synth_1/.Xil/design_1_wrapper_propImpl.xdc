@@ -1,0 +1,5 @@
+set_property SRC_FILE_INFO {cfile:C:/Users/Anthony/Documents/ECE532/servo/servo.srcs/constrs_2/new/cnstr.xdc rfile:../../../servo.srcs/constrs_2/new/cnstr.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN E16 [get_ports servoPWM1]
+set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN F13 [get_ports servoPWM2]

@@ -1,0 +1,21 @@
+14:14:18 **** Auto Build of configuration Debug for project servo ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I../../servo_bsp/microblaze_0/include -I"C:\Users\Anthony\Documents\ECE532\servo\servo.sdk\design_1_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/main.o" -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: servo.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../servo_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "servo.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: servo.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size servo.elf  |tee "servo.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   2084	    268	   3112	   5464	   1558	servo.elf
+'Finished building: servo.elf.size'
+' '
+
+14:14:21 Build Finished (took 3s.553ms)
+

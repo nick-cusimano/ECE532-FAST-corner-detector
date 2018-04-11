@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Sat Apr  7 22:11:35 2018
+# Process ID: 1280
+# Current directory: C:/Users/Anthony/Documents/ECE532/servo
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13820 C:\Users\Anthony\Documents\ECE532\servo\servo.xpr
+# Log file: C:/Users/Anthony/Documents/ECE532/servo/vivado.log
+# Journal file: C:/Users/Anthony/Documents/ECE532/servo\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Anthony/Documents/ECE532/servo/servo.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'C:/Users/Anthony/Documents/ECE532/ip_repo/servo_ip_1.0'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Anthony/Documents/ECE532/ip_repo/srervo_ip_1.0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/Anthony/Documents/ECE532/ip_repo/servo_ip_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+open_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:18 . Memory (MB): peak = 783.391 ; gain = 132.668
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Apr  7 22:12:35 2018...
